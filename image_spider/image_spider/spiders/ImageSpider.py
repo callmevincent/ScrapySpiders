@@ -45,10 +45,12 @@ class ImageSpider(scrapy.Spider):
                 href_url = current_url + href_url
             else:
                 href_url = '/'.join(current_url.split('/')[0:-1]) + '/' + href_url
+
+        if "javascripts:" in href_url:
+            return current_domain
         return href_url
 
     def parse(self, response):
-
         self.logger.info('A response from %s just arrived!', response.url)
         for href_url in response.xpath("//a/@href").extract():
             if href_url in self.URL:

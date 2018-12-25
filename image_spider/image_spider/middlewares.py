@@ -97,8 +97,8 @@ class ImageSpiderDownloaderMiddleware(object):
         # - return None: continue processing this exception
         # - return a Response object: stops process_exception() chain
         # - return a Request object: stops process_exception() chain
-        # if len(spider.URL) >= 5:
-        #     print("urls {} ".format(spider.URL))
+        if len(spider.URL) >= 5:
+            print("urls {} ".format(spider.URL))
         pass
 
     def spider_opened(self, spider):

@@ -14,7 +14,7 @@ BOT_NAME = 'image_spider'
 SPIDER_MODULES = ['image_spider.spiders']
 NEWSPIDER_MODULE = 'image_spider.spiders'
 
-
+LOG_LEVEL = "INFO"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'image_spider (+http://www.yourdomain.com)'
 
@@ -80,6 +80,9 @@ ROBOTSTXT_OBEY = True
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
 #AUTOTHROTTLE_DEBUG = False
+
+#CONFIG HTTPERROR_ALLOWED_CODES
+HTTPERROR_ALLOWED_CODES = [403, 404, 500]
 
 # Enable and configure HTTP caching (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
